@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url(F77\ Minecraft.woff) format("woff");
+}
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #1e1e1e;
+  color: #ddd;
+  overflow: auto;
+}
+.title {
+  font-family: "Minecraft";
+}
+canvas#snow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 2px solid #555;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+header p {
+  font-family: "Minecraft";
+  font-size: 24px;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+header nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+.blocks {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid #444;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.2s;
+}
+
+.blocks h2 {
+  font-family: "Minecraft";
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  margin-bottom: 40px;
+}
+
+.block-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.block-card {
+  flex: 0 0 calc(25% - 15px);
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid #555;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 250px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.block-card:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 200, 0.5);
+  transform: scale(1.05);
+}
+
+.block-image {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border: 2px solid #555;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.block-divider {
+  width: 100%;
+  height: 2px;
+  background: #555;
+  margin: 10px 0;
+}
+
+.block-text {
+  flex: 1;
+  text-align: left;
+}
+
+.block-text h3 {
+  font-family: "Minecraft";
+  font-size: 18px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.block-text p {
+  font-size: 13px;
+  color: #ccc;
+}
+
+footer {
+  font-family: "Minecraft";
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.5);
+  color: #999;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.4s;
+}
+.block-3d {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #555;
+}
+canvas.three-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

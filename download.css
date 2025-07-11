@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url(F77\ Minecraft.woff) format("woff");
+}
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: #1e1e1e;
+  color: #ddd;
+  overflow: auto;
+}
+.title {
+  font-family: "Minecraft";
+}
+canvas#snow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 2px solid #555;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+header p {
+  font-family: "Minecraft";
+  font-size: 24px;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+header nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #fff;
+}
+
+.download {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid #444;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.2s;
+}
+
+.download h2 {
+  font-family: "Minecraft";
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  margin-bottom: 40px;
+}
+
+.chest-shelf {
+  background: url('chest-texture.png') no-repeat center;
+  background-size: cover;
+  padding: 40px;
+  border: 3px solid #333;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.shelf-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shelf-slot {
+  background: rgba(10, 10, 10, 0.9);
+  border: 3px solid #444;
+  padding: 20px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shelf-slot:hover {
+  box-shadow: 0 0 25px 10px rgba(255, 255, 200, 0.7);
+  transform: scale(1.15);
+}
+
+.download-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 180px;
+  padding: 0;
+}
+
+.download-btn img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  margin-bottom: 15px;
+}
+
+.download-btn span {
+  font-family: "Minecraft";
+  font-size: 18px;
+  color: #ccc;
+  text-shadow: 1px 1px #000;
+}
+
+.download-btn:hover span {
+  color: #fff;
+}
+
+.download-animation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.download-animation.active {
+  display: flex;
+}
+
+.animation-icon {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  animation: popAndFade 1.5s ease-out forwards;
+}
+
+.sparkle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle, rgba(255, 255, 200, 0.8) 20%, transparent 70%);
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-out infinite;
+}
+
+.sparkle:nth-child(2) { animation-delay: 0.2s; transform: translate(60px, -40px); }
+.sparkle:nth-child(3) { animation-delay: 0.4s; transform: translate(-50px, 50px); }
+.sparkle:nth-child(4) { animation-delay: 0.6s; transform: translate(40px, 60px); }
+
+footer {
+  font-family: "Minecraft";
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.5);
+  color: #999;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.4s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popAndFade {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
